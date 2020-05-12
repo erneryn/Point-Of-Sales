@@ -12,7 +12,7 @@ Router.get('/category', categoryController.getAllCat)
 Router.post('/category', categoryController.postCat)
 Router.get('/category/:id', categoryController.getOneCat)
 Router.put('/category/:id', categoryController.putCat)
-Router.delete('/category/:id', categoryController.deleteCat)
+Router.delete('/category', categoryController.deleteCat)
 
 
 

@@ -52,11 +52,17 @@ class categoryController{
 
 
     static async deleteCat(req,res,next) {
-        await Item.findOneAndDelete({ _id : req.params.id},(err,doc)=>{
+        await Category.deleteMany(
+            { 
+                _id :{
+                     $in: req.body.categoryId
+                    }
+                },
+                (err,result)=>{
             if(err){
                 next(err)
             }
-            res.status(201).json(doc)
+            res.status(201).json(result)
         })
     }
 }

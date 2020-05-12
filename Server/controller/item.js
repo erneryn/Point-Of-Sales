@@ -1,4 +1,5 @@
 const Item = require('../model/item')
+const Cateogry = require('../model/category')
 
 class itemController{
     static async getAllItem(req,res,next){
@@ -32,6 +33,11 @@ class itemController{
                 category: req.body.categoryId
             })
             const item = await Item.create(newItem)
+            await Cateogry.findByIdAndUpdate(req.body.categoryId,{
+                $push: {
+                    items: item._id
+                }
+            })
             res.status(200).json(item)
         } catch (error) {
             res.send(error)
