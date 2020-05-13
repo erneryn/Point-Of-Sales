@@ -17,10 +17,10 @@ const routes = [
     },
     children:[
       {
-        path: "/about",
-        name: "About",
+        path: "/category",
+        name: "category",
         component: () =>
-          import(/* webpackChunkName: "about" */ "../views/About.vue"),
+          import(/* webpackChunkName: "about" */ "../views/./dashboard/categoryList.vue"),
         meta:{
           reqLogin : true
         }

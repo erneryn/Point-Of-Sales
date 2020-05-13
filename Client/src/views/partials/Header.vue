@@ -51,7 +51,7 @@ export default {
         color: "#ff5252",
         childs: [
           { title: "Item list", target:'Item' },
-          { title: "Category", target:'About' },
+          { title: "Category", target:'category' },
           { title: "Discount" },
         ],
       },
